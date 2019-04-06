@@ -24,7 +24,7 @@ class ParseClient: BaseClient<ParseResponse> {
         
         var stringValue: String {
             switch self {
-            case .getStudentLocations(let limit): return Endpoints.base + "/StudentLocation?limit=\(limit)"
+            case .getStudentLocations(let limit): return Endpoints.base + "/StudentLocation?limit=\(limit)&order=-updatedAt"
             }
         }
         
