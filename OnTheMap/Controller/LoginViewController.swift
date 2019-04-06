@@ -21,9 +21,18 @@ class LoginViewController: UIViewController {
     
     func handleSessionResponse(success: Bool, error: Error?) {
         if success {
-            performSegue(withIdentifier: "showHome", sender: self)
+            ParseClient.getStudentLocations(completion: self.handleStudentInformationResponse)
         } else {
             showLoginFailure(message: error?.localizedDescription ?? "")
+        }
+    }
+    
+    func handleStudentInformationResponse(students: [StudentInformation], error: Error?) {
+        print("Students: \(students) count: \(students.count)")
+        if error == nil {
+            performSegue(withIdentifier: "showHome", sender: self)
+        } else {
+            showGetStudentInformationFailed(message: error?.localizedDescription ?? "")
         }
     }
     
@@ -33,6 +42,12 @@ class LoginViewController: UIViewController {
     
     func showLoginFailure(message: String) {
         let alertVC = UIAlertController(title: "Login Failed", message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        show(alertVC, sender: nil)
+    }
+    
+    func showGetStudentInformationFailed(message: String) {
+        let alertVC = UIAlertController(title: "Students failed", message: message, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         show(alertVC, sender: nil)
     }
