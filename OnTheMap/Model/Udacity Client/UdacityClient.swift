@@ -19,10 +19,12 @@ class UdacityClient {
         static let base = "https://onthemap-api.udacity.com"
         
         case createSessionId
+        case logout
         
         var stringValue: String {
             switch self {
             case .createSessionId: return Endpoints.base + "/v1/session"
+            case .logout: return Endpoints.base + "/v1/session"
             }
         }
         
@@ -118,5 +120,24 @@ class UdacityClient {
                 completion(false, error)
             }
         }
+    }
+    
+    class func logout(completion: @escaping (Error?) -> Void) {
+        var request = URLRequest(url: Endpoints.logout.url)
+        request.httpMethod = "Delete"
+        var xsrfCookie: HTTPCookie? = nil
+        let sharedCookieStorage = HTTPCookieStorage.shared
+        for cookie in sharedCookieStorage.cookies! {
+            if cookie.name == "XSRF-TOKEN" { xsrfCookie = cookie }
+        }
+        if let xsrfCookie = xsrfCookie {
+            request.setValue(xsrfCookie.value, forHTTPHeaderField: "X-XSRF-TOKEN")
+        }
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            DispatchQueue.main.async {
+                completion(error)
+            }
+        }
+        task.resume()
     }
 }
