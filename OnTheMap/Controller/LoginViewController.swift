@@ -27,9 +27,10 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func handleStudentInformationResponse(students: [StudentInformation], error: Error?) {
+    func handleStudentInformationResponse(students: [Student], error: Error?) {
         print("Students: \(students) count: \(students.count)")
         if error == nil {
+            StudentModel.students = students
             performSegue(withIdentifier: "showHome", sender: self)
         } else {
             showGetStudentInformationFailed(message: error?.localizedDescription ?? "")

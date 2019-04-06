@@ -24,7 +24,8 @@
 		04434D002258F61C00B1A48A /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04434CFF2258F61C00B1A48A /* ParseClient.swift */; };
 		04434D072258F64D00B1A48A /* ParseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04434D062258F64D00B1A48A /* ParseResponse.swift */; };
 		04434D092259054A00B1A48A /* StudentLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04434D082259054A00B1A48A /* StudentLocationResponse.swift */; };
-		04434D0B2259056200B1A48A /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04434D0A2259056200B1A48A /* StudentInformation.swift */; };
+		04434D0B2259056200B1A48A /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04434D0A2259056200B1A48A /* Student.swift */; };
+		04434D0E22590DED00B1A48A /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04434D0D22590DED00B1A48A /* StudentModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +48,8 @@
 		04434CFF2258F61C00B1A48A /* ParseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
 		04434D062258F64D00B1A48A /* ParseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseResponse.swift; sourceTree = "<group>"; };
 		04434D082259054A00B1A48A /* StudentLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocationResponse.swift; sourceTree = "<group>"; };
-		04434D0A2259056200B1A48A /* StudentInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
+		04434D0A2259056200B1A48A /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		04434D0D22590DED00B1A48A /* StudentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		04434CE02258CDE500B1A48A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04434D0C22590DDB00B1A48A /* Data */,
 				04434D042258F63A00B1A48A /* Parse Requests */,
 				04434D032258F63400B1A48A /* Parse Responses */,
 				04434CFA2258F10D00B1A48A /* Parse Client */,
@@ -171,7 +174,7 @@
 			children = (
 				04434D062258F64D00B1A48A /* ParseResponse.swift */,
 				04434D082259054A00B1A48A /* StudentLocationResponse.swift */,
-				04434D0A2259056200B1A48A /* StudentInformation.swift */,
+				04434D0A2259056200B1A48A /* Student.swift */,
 			);
 			path = "Parse Responses";
 			sourceTree = "<group>";
@@ -181,6 +184,14 @@
 			children = (
 			);
 			path = "Parse Requests";
+			sourceTree = "<group>";
+		};
+		04434D0C22590DDB00B1A48A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				04434D0D22590DED00B1A48A /* StudentModel.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +268,9 @@
 				04434CCE2258CD9400B1A48A /* PinListViewController.swift in Sources */,
 				04434CE62258D2F400B1A48A /* LoginButton.swift in Sources */,
 				04434CEF2258E01C00B1A48A /* UdacityClient.swift in Sources */,
-				04434D0B2259056200B1A48A /* StudentInformation.swift in Sources */,
+				04434D0B2259056200B1A48A /* Student.swift in Sources */,
 				04434D092259054A00B1A48A /* StudentLocationResponse.swift in Sources */,
+				04434D0E22590DED00B1A48A /* StudentModel.swift in Sources */,
 				04434CF32258E1EC00B1A48A /* SessionResponse.swift in Sources */,
 				04434D072258F64D00B1A48A /* ParseResponse.swift in Sources */,
 				04434CFE2258F58400B1A48A /* BaseClient.swift in Sources */,
