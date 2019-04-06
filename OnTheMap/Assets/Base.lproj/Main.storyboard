@@ -96,28 +96,35 @@
                                 <rect key="frame" x="176" y="98" width="62" height="62"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ODD-ac-a2h">
-                                <rect key="frame" x="64" y="192" width="286" height="106"/>
+                                <rect key="frame" x="64" y="192" width="286" height="151"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vj1-cc-eGn">
-                                        <rect key="frame" x="0.0" y="0.0" width="286" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="286" height="45"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FIA-mc-xmf">
-                                        <rect key="frame" x="0.0" y="38" width="286" height="30"/>
+                                        <rect key="frame" x="0.0" y="53" width="286" height="45"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9O-sT-Cfa">
-                                        <rect key="frame" x="0.0" y="76" width="286" height="30"/>
-                                        <state key="normal" title="Login"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9O-sT-Cfa" customClass="LoginButton" customModule="OnTheMap" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="106" width="286" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="MtY-H3-ROP"/>
+                                        </constraints>
+                                        <state key="normal" title="LOG IN"/>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="vj1-cc-eGn" firstAttribute="height" secondItem="F9O-sT-Cfa" secondAttribute="height" id="Rvm-6D-6Mf"/>
+                                    <constraint firstItem="FIA-mc-xmf" firstAttribute="height" secondItem="F9O-sT-Cfa" secondAttribute="height" id="ihg-KY-gq4"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="mCe-xJ-gME">
-                                <rect key="frame" x="89.5" y="314" width="235" height="30"/>
+                                <rect key="frame" x="89.5" y="359" width="235" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAo-pG-UVp">
                                         <rect key="frame" x="0.0" y="0.0" width="179" height="30"/>
@@ -173,4 +180,5 @@
         <image name="logo-u" width="62" height="62"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <color key="tintColor" name="primary"/>
 </document>
