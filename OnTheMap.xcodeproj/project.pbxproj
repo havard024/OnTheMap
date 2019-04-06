@@ -14,6 +14,11 @@
 		04434CD32258CD9500B1A48A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04434CD22258CD9500B1A48A /* Assets.xcassets */; };
 		04434CD62258CD9500B1A48A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04434CD42258CD9500B1A48A /* LaunchScreen.storyboard */; };
 		04434CE62258D2F400B1A48A /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04434CE52258D2F400B1A48A /* LoginButton.swift */; };
+		04434CED2258DF1700B1A48A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04434CEC2258DF1700B1A48A /* LoginViewController.swift */; };
+		04434CEF2258E01C00B1A48A /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04434CEE2258E01C00B1A48A /* UdacityClient.swift */; };
+		04434CF12258E12F00B1A48A /* PostSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04434CF02258E12F00B1A48A /* PostSession.swift */; };
+		04434CF32258E1EC00B1A48A /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04434CF22258E1EC00B1A48A /* SessionResponse.swift */; };
+		04434CF52258E58600B1A48A /* UdacityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04434CF42258E58600B1A48A /* UdacityResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		04434CD52258CD9500B1A48A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04434CD72258CD9500B1A48A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04434CE52258D2F400B1A48A /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		04434CEC2258DF1700B1A48A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		04434CEE2258E01C00B1A48A /* UdacityClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
+		04434CF02258E12F00B1A48A /* PostSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSession.swift; sourceTree = "<group>"; };
+		04434CF22258E1EC00B1A48A /* SessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponse.swift; sourceTree = "<group>"; };
+		04434CF42258E58600B1A48A /* UdacityResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +83,7 @@
 			children = (
 				04434CCB2258CD9400B1A48A /* MapViewController.swift */,
 				04434CCD2258CD9400B1A48A /* PinListViewController.swift */,
+				04434CEC2258DF1700B1A48A /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -108,6 +119,7 @@
 		04434CE22258CE0000B1A48A /* Udacity Client */ = {
 			isa = PBXGroup;
 			children = (
+				04434CEE2258E01C00B1A48A /* UdacityClient.swift */,
 			);
 			path = "Udacity Client";
 			sourceTree = "<group>";
@@ -115,6 +127,7 @@
 		04434CE32258CE0F00B1A48A /* Udacity Requests */ = {
 			isa = PBXGroup;
 			children = (
+				04434CF02258E12F00B1A48A /* PostSession.swift */,
 			);
 			path = "Udacity Requests";
 			sourceTree = "<group>";
@@ -122,6 +135,8 @@
 		04434CE42258CE1400B1A48A /* Udacity Responses */ = {
 			isa = PBXGroup;
 			children = (
+				04434CF22258E1EC00B1A48A /* SessionResponse.swift */,
+				04434CF42258E58600B1A48A /* UdacityResponse.swift */,
 			);
 			path = "Udacity Responses";
 			sourceTree = "<group>";
@@ -199,7 +214,12 @@
 			files = (
 				04434CCE2258CD9400B1A48A /* PinListViewController.swift in Sources */,
 				04434CE62258D2F400B1A48A /* LoginButton.swift in Sources */,
+				04434CEF2258E01C00B1A48A /* UdacityClient.swift in Sources */,
+				04434CF32258E1EC00B1A48A /* SessionResponse.swift in Sources */,
+				04434CF52258E58600B1A48A /* UdacityResponse.swift in Sources */,
 				04434CCA2258CD9400B1A48A /* AppDelegate.swift in Sources */,
+				04434CED2258DF1700B1A48A /* LoginViewController.swift in Sources */,
+				04434CF12258E12F00B1A48A /* PostSession.swift in Sources */,
 				04434CCC2258CD9400B1A48A /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
