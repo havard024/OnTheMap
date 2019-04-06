@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct StudentInformation: Codable {
+struct Student: Codable {
     let latitude: Float?
     let longitude: Float?
     let mediaURL: String?
