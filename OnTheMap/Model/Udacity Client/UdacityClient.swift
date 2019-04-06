@@ -34,6 +34,7 @@ class UdacityClient {
     }
     
     class func taskForPOSTRequest<RequestType: Encodable, ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, body: RequestType, completion: @escaping (ResponseType?, Error?) -> Void) {
+        Spinner.start()
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -43,6 +44,7 @@ class UdacityClient {
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data else {
                 DispatchQueue.main.async {
+                    Spinner.stop()
                     completion(nil, error)
                 }
                 return
@@ -55,6 +57,7 @@ class UdacityClient {
             do {
                 let responseObject = try decoder.decode(ResponseType.self, from: newData)
                 DispatchQueue.main.async {
+                    Spinner.stop()
                     completion(responseObject, error)
                 }
                 
@@ -62,10 +65,12 @@ class UdacityClient {
                 do {
                     let errorResponse = try decoder.decode(UdacityResponse.self, from: newData)
                     DispatchQueue.main.async {
+                        Spinner.stop()
                         completion(nil, errorResponse)
                     }
                 } catch {
                     DispatchQueue.main.async {
+                        Spinner.stop()
                         completion(nil, error)
                     }
                 }
@@ -123,6 +128,7 @@ class UdacityClient {
     }
     
     class func logout(completion: @escaping (Error?) -> Void) {
+        Spinner.start()
         var request = URLRequest(url: Endpoints.logout.url)
         request.httpMethod = "Delete"
         var xsrfCookie: HTTPCookie? = nil
@@ -135,6 +141,7 @@ class UdacityClient {
         }
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
+                Spinner.stop()
                 completion(error)
             }
         }
