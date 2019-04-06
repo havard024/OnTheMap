@@ -33,7 +33,7 @@ class ParseClient: BaseClient<ParseResponse> {
         }
     }
     
-    class func getStudentLocations(limit: Int = 50, completion: @escaping ([StudentInformation], Error?) -> Void) {
+    class func getStudentLocations(limit: Int = 100, completion: @escaping ([StudentInformation], Error?) -> Void) {
         let url = Endpoints.getStudentLocations(limit).url
         
         taskForGETRequest(url: url, responseType: StudentLocationResponse.self, headers: headers) { (response, error) in
