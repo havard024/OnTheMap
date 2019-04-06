@@ -56,15 +56,71 @@
 		04434CC82258CD9400B1A48A /* OnTheMap */ = {
 			isa = PBXGroup;
 			children = (
+				04434CE12258CDF000B1A48A /* View */,
+				04434CE02258CDE500B1A48A /* Model */,
 				04434CC92258CD9400B1A48A /* AppDelegate.swift */,
-				04434CCB2258CD9400B1A48A /* FirstViewController.swift */,
-				04434CCD2258CD9400B1A48A /* SecondViewController.swift */,
-				04434CCF2258CD9400B1A48A /* Main.storyboard */,
-				04434CD22258CD9500B1A48A /* Assets.xcassets */,
-				04434CD42258CD9500B1A48A /* LaunchScreen.storyboard */,
+				04434CDE2258CDCE00B1A48A /* Controller */,
+				04434CDF2258CDD800B1A48A /* Assets */,
 				04434CD72258CD9500B1A48A /* Info.plist */,
 			);
 			path = OnTheMap;
+			sourceTree = "<group>";
+		};
+		04434CDE2258CDCE00B1A48A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04434CCB2258CD9400B1A48A /* FirstViewController.swift */,
+				04434CCD2258CD9400B1A48A /* SecondViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04434CDF2258CDD800B1A48A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				04434CCF2258CD9400B1A48A /* Main.storyboard */,
+				04434CD22258CD9500B1A48A /* Assets.xcassets */,
+				04434CD42258CD9500B1A48A /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		04434CE02258CDE500B1A48A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04434CE42258CE1400B1A48A /* Udacity Responses */,
+				04434CE32258CE0F00B1A48A /* Udacity Requests */,
+				04434CE22258CE0000B1A48A /* Udacity Client */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04434CE12258CDF000B1A48A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04434CE22258CE0000B1A48A /* Udacity Client */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Udacity Client";
+			sourceTree = "<group>";
+		};
+		04434CE32258CE0F00B1A48A /* Udacity Requests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Udacity Requests";
+			sourceTree = "<group>";
+		};
+		04434CE42258CE1400B1A48A /* Udacity Responses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Udacity Responses";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
