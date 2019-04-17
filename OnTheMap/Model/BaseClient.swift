@@ -24,6 +24,8 @@ class BaseClient<ClientResponse> where ClientResponse: Decodable, ClientResponse
     class func taskForPOSTRequest<RequestType: Encodable, ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, body: RequestType, headers: [String:String]? = [:], dataTransformer: dataTransformerHandler?, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let encoder = JSONEncoder()
         request.httpBody = try! encoder.encode(body)
