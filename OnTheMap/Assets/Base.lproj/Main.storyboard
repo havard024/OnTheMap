@@ -258,13 +258,64 @@
                     <view key="view" contentMode="scaleToFill" id="vNC-jg-pHA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_world" translatesAutoresizingMaskIntoConstraints="NO" id="jFZ-Gt-HGr">
+                                <rect key="frame" x="181" y="142" width="52" height="67"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2of-J4-qPI">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Add Location" id="G6X-pQ-ddO">
+                                        <barButtonItem key="leftBarButtonItem" title="CANCEL" id="HoU-xo-mI8"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CdY-7k-RxP">
+                                <rect key="frame" x="64" y="241" width="286" height="151"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IjQ-2I-bPV">
+                                        <rect key="frame" x="0.0" y="0.0" width="286" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="Wg1-rm-GUt"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CZ1-s6-GN3">
+                                        <rect key="frame" x="0.0" y="53" width="286" height="45"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTi-kW-BS0">
+                                        <rect key="frame" x="0.0" y="106" width="286" height="45"/>
+                                        <state key="normal" title="FIND LOCATION"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="MTi-kW-BS0" firstAttribute="height" secondItem="IjQ-2I-bPV" secondAttribute="height" id="SQH-pU-MKg"/>
+                                    <constraint firstItem="CZ1-s6-GN3" firstAttribute="height" secondItem="IjQ-2I-bPV" secondAttribute="height" id="iyb-fQ-Ay9"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jFZ-Gt-HGr" firstAttribute="top" secondItem="2of-J4-qPI" secondAttribute="bottom" constant="54" id="0TP-JZ-m1d"/>
+                            <constraint firstItem="9PU-Hi-kSc" firstAttribute="trailing" secondItem="CdY-7k-RxP" secondAttribute="trailing" constant="64" id="7Q8-Eu-7A8"/>
+                            <constraint firstItem="CdY-7k-RxP" firstAttribute="top" secondItem="jFZ-Gt-HGr" secondAttribute="bottom" constant="32" id="Gct-Fi-Lyg"/>
+                            <constraint firstItem="CdY-7k-RxP" firstAttribute="leading" secondItem="9PU-Hi-kSc" secondAttribute="leading" constant="64" id="Q8m-fC-Kga"/>
+                            <constraint firstItem="2of-J4-qPI" firstAttribute="trailing" secondItem="9PU-Hi-kSc" secondAttribute="trailing" id="U2p-Pu-F3g"/>
+                            <constraint firstItem="jFZ-Gt-HGr" firstAttribute="centerX" secondItem="9PU-Hi-kSc" secondAttribute="centerX" id="gZF-rr-uhc"/>
+                            <constraint firstItem="2of-J4-qPI" firstAttribute="leading" secondItem="9PU-Hi-kSc" secondAttribute="leading" id="jdx-6W-KLi"/>
+                            <constraint firstItem="2of-J4-qPI" firstAttribute="top" secondItem="9PU-Hi-kSc" secondAttribute="top" id="o5q-yl-QGi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9PU-Hi-kSc"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHN-TN-c8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1965" y="-71"/>
+            <point key="canvasLocation" x="1963.7681159420292" y="-71.651785714285708"/>
         </scene>
     </scenes>
     <resources>
@@ -274,10 +325,11 @@
         <image name="icon_mapview-deselected" width="75" height="50"/>
         <image name="icon_mapview-selected" width="75" height="50"/>
         <image name="icon_refresh" width="24" height="24"/>
+        <image name="icon_world" width="52" height="67"/>
         <image name="logo-u" width="62" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ldr-l6-mCS"/>
+        <segue reference="BVY-v4-D8T"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="primary"/>
 </document>
