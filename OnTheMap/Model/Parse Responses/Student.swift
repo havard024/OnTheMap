@@ -9,14 +9,15 @@
 import Foundation
 
 struct Student: Codable {
-    let latitude: Float?
-    let longitude: Float?
+    let objectId: String
+    let latitude: Double?
+    let longitude: Double?
     let mediaURL: String?
     let firstName: String?
     let lastName: String?
     
     var isValid: Bool {
-        guard let _ = latitude, let _ = longitude, let _ = mediaURL, let _ = firstName, let _ = lastName else {
+        guard let _ = latitude, let _ = longitude, let mediaURL = mediaURL, !mediaURL.isEmpty, let firstName = firstName, !firstName.isEmpty, let lastName = lastName, !lastName.isEmpty else {
             return false
         }
         return true
