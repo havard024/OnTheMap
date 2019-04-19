@@ -17,8 +17,6 @@ class PinListViewController: UIViewController {
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(PinListViewCell.self, forCellReuseIdentifier: "Cell")
-
     }
 }
 
@@ -33,7 +31,8 @@ extension PinListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = PinListViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
         let student = StudentModel.students[indexPath.row]
         let name = "\(student.firstName!) \(student.lastName!)"
         
