@@ -7,13 +7,30 @@
 //
 
 import UIKit
+import MapKit
 
 class InformationPostingMapViewController: UIViewController {
 
+    @IBOutlet weak var mapView: MKMapView!
+    var informationPost: InformationPost?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        mapView.delegate = self
+        
+        guard let informationPost = informationPost else {
+            preconditionFailure("informationPost was empty when view was presented, did you forget to set the informationPost before navigating?")
+            return
+        }
+        
+        let region = MKCoordinateRegion(center: informationPost.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+        mapView.setRegion(region, animated: true)
+        
+        let annotation = informationPost.annotation
+        mapView.addAnnotation(annotation)
+        
+        mapView.selectAnnotation(annotation, animated: true)
     }
     
 
@@ -27,4 +44,24 @@ class InformationPostingMapViewController: UIViewController {
     }
     */
 
+}
+
+extension InformationPostingMapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        let reuseId = "pin"
+        
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        
+        if pinView == nil {
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView!.canShowCallout = true
+            pinView!.pinTintColor = .red
+        }
+        else {
+            pinView!.annotation = annotation
+        }
+        
+        return pinView
+    }
 }

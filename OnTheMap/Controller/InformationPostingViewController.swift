@@ -8,11 +8,29 @@
 
 import UIKit
 import CoreLocation
+import MapKit
+
+struct InformationPost {
+    let location: String
+    let link: String
+    let coordinate: CLLocationCoordinate2D
+    
+    var annotation: MKPointAnnotation {
+        get {
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = coordinate
+            annotation.title = location
+            return annotation
+        }
+    }
+}
 
 class InformationPostingViewController: UIViewController {
 
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var linkTextField: UITextField!
+    
+    private var coordinate: CLLocationCoordinate2D?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +60,28 @@ class InformationPostingViewController: UIViewController {
         if error != nil {
             showMessage(message: "Could not convert location to geolocation: \(locationTextField.text ?? "")")
         } else {
+            // Store geolocation so we can use it in prepare function
+            coordinate = geolocation
             performSegue(withIdentifier: "showInformationPostingMap", sender: self)
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let coordinate = coordinate else {
+            preconditionFailure("Coordinate is empty, can't segue without it.")
+        }
+        
+        guard let identifier = segue.identifier, identifier == "showInformationPostingMap" else {
+            return
+        }
+        
+        
+        let vc = segue.destination as! InformationPostingMapViewController
+        
+        // TODO: Should probably refactor so we don't need to force unwrap text fields
+        let informationPost = InformationPost(location: locationTextField.text!, link: linkTextField.text!, coordinate: coordinate)
+        vc.informationPost = informationPost
     }
     
     private func getCoordinate( addressString : String,

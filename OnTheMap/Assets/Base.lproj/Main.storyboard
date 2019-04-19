@@ -346,14 +346,28 @@
                     <view key="view" contentMode="scaleToFill" id="NcM-Nb-T4b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7f5-cr-G5X">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7f5-cr-G5X" firstAttribute="bottom" secondItem="3QA-Ud-0sF" secondAttribute="bottom" id="1dr-w2-jYP"/>
+                            <constraint firstItem="7f5-cr-G5X" firstAttribute="top" secondItem="3QA-Ud-0sF" secondAttribute="top" id="5Qy-Pq-A5v"/>
+                            <constraint firstItem="7f5-cr-G5X" firstAttribute="trailing" secondItem="3QA-Ud-0sF" secondAttribute="trailing" id="ClZ-CG-UHd"/>
+                            <constraint firstItem="7f5-cr-G5X" firstAttribute="leading" secondItem="3QA-Ud-0sF" secondAttribute="leading" id="TUf-AA-yhB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3QA-Ud-0sF"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Location" id="Hkf-aS-M20"/>
+                    <connections>
+                        <outlet property="mapView" destination="7f5-cr-G5X" id="qDt-zi-zkf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebY-UD-Qyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3822" y="-72"/>
+            <point key="canvasLocation" x="3821.739130434783" y="-72.321428571428569"/>
         </scene>
     </scenes>
     <resources>
