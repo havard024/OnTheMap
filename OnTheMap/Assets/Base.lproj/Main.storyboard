@@ -266,7 +266,11 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Add Location" id="G6X-pQ-ddO">
-                                        <barButtonItem key="leftBarButtonItem" title="CANCEL" id="HoU-xo-mI8"/>
+                                        <barButtonItem key="leftBarButtonItem" title="CANCEL" id="HoU-xo-mI8">
+                                            <connections>
+                                                <action selector="cancelTapped:" destination="4ae-65-hh1" id="dqk-SF-Qud"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -291,6 +295,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTi-kW-BS0">
                                         <rect key="frame" x="0.0" y="106" width="286" height="45"/>
                                         <state key="normal" title="FIND LOCATION"/>
+                                        <connections>
+                                            <action selector="findLocationTapped:" destination="4ae-65-hh1" eventType="touchUpInside" id="aZo-Hn-0DT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -312,6 +319,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9PU-Hi-kSc"/>
                     </view>
+                    <connections>
+                        <outlet property="linkTextField" destination="CZ1-s6-GN3" id="OK5-Wz-llS"/>
+                        <outlet property="locationTextField" destination="IjQ-2I-bPV" id="DJm-sw-eIy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHN-TN-c8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

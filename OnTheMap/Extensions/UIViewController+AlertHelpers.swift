@@ -21,4 +21,10 @@ extension UIViewController {
         alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         show(alertVC, sender: nil)
     }
+    
+    func showMessage(message: String) {
+        let alertVC = UIAlertController(title: "Info", message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        show(alertVC, sender: nil)
+    }
 }
