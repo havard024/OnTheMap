@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043046E0226A7B5F003708D3 /* UIViewController+AlertHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043046DF226A7B5F003708D3 /* UIViewController+AlertHelpers.swift */; };
+		043046E2226A7C90003708D3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043046E1226A7C90003708D3 /* BaseViewController.swift */; };
 		04434CCA2258CD9400B1A48A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04434CC92258CD9400B1A48A /* AppDelegate.swift */; };
 		04434CCC2258CD9400B1A48A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04434CCB2258CD9400B1A48A /* MapViewController.swift */; };
 		04434CCE2258CD9400B1A48A /* PinListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04434CCD2258CD9400B1A48A /* PinListViewController.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		043046DF226A7B5F003708D3 /* UIViewController+AlertHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AlertHelpers.swift"; sourceTree = "<group>"; };
+		043046E1226A7C90003708D3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		04434CC62258CD9400B1A48A /* OnTheMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04434CC92258CD9400B1A48A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04434CCB2258CD9400B1A48A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		043046DE226A7B39003708D3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				043046DF226A7B5F003708D3 /* UIViewController+AlertHelpers.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		04434CBD2258CD9400B1A48A = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +94,7 @@
 		04434CC82258CD9400B1A48A /* OnTheMap */ = {
 			isa = PBXGroup;
 			children = (
+				043046DE226A7B39003708D3 /* Extensions */,
 				04434CE12258CDF000B1A48A /* View */,
 				04434CE02258CDE500B1A48A /* Model */,
 				04434CC92258CD9400B1A48A /* AppDelegate.swift */,
@@ -98,6 +111,7 @@
 				04434CCB2258CD9400B1A48A /* MapViewController.swift */,
 				04434CCD2258CD9400B1A48A /* PinListViewController.swift */,
 				04434CEC2258DF1700B1A48A /* LoginViewController.swift */,
+				043046E1226A7C90003708D3 /* BaseViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -270,7 +284,9 @@
 				04434CEF2258E01C00B1A48A /* UdacityClient.swift in Sources */,
 				04434D0B2259056200B1A48A /* Student.swift in Sources */,
 				04434D092259054A00B1A48A /* StudentLocationResponse.swift in Sources */,
+				043046E2226A7C90003708D3 /* BaseViewController.swift in Sources */,
 				04434D0E22590DED00B1A48A /* StudentModel.swift in Sources */,
+				043046E0226A7B5F003708D3 /* UIViewController+AlertHelpers.swift in Sources */,
 				04434CF32258E1EC00B1A48A /* SessionResponse.swift in Sources */,
 				04434D072258F64D00B1A48A /* ParseResponse.swift in Sources */,
 				04434CFE2258F58400B1A48A /* BaseClient.swift in Sources */,

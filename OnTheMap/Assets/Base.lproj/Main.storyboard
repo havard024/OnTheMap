@@ -34,8 +34,16 @@
                                             </connections>
                                         </barButtonItem>
                                         <rightBarButtonItems>
-                                            <barButtonItem title="Item" image="icon_refresh" id="yOQ-5f-HJW"/>
-                                            <barButtonItem image="icon_addpin" id="eeK-gz-fIz"/>
+                                            <barButtonItem title="Item" image="icon_refresh" id="yOQ-5f-HJW">
+                                                <connections>
+                                                    <action selector="refreshTapped:" destination="9pv-A4-QxB" id="0Hu-aj-FaP"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem image="icon_addpin" id="eeK-gz-fIz">
+                                                <connections>
+                                                    <action selector="addTapped:" destination="9pv-A4-QxB" id="GeZ-xf-Tqa"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
@@ -69,14 +77,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cL8-MT-vzP">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cL8-MT-vzP" customClass="NavigationBar" customModule="OnTheMap" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="On The Map" id="0wo-GJ-j2j">
-                                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="Hg5-5Q-das"/>
+                                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="Hg5-5Q-das">
+                                            <connections>
+                                                <action selector="logoutTapped:" destination="8rJ-Kc-sve" id="2DU-FK-uxy"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <rightBarButtonItems>
-                                            <barButtonItem title="Item" image="icon_refresh" id="PX4-jU-ijz"/>
-                                            <barButtonItem image="icon_addpin" id="gXS-qy-yhu"/>
+                                            <barButtonItem title="Item" image="icon_refresh" id="PX4-jU-ijz">
+                                                <connections>
+                                                    <action selector="refreshTapped:" destination="8rJ-Kc-sve" id="okJ-fF-gIN"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem image="icon_addpin" id="gXS-qy-yhu">
+                                                <connections>
+                                                    <action selector="addTapped:" destination="8rJ-Kc-sve" id="eTp-ug-czE"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </rightBarButtonItems>
                                     </navigationItem>
                                 </items>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PinListViewController: UIViewController {
+class PinListViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -17,6 +17,18 @@ class PinListViewController: UIViewController {
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    @IBAction func refreshTapped(_ sender: Any) {
+        handleRefresh()
+    }
+    
+    @IBAction func logoutTapped(_ sender: Any) {
+        handleLogout()
+    }
+    
+    @IBAction func addTapped(_ sender: Any) {
+        handleAdd()
     }
 }
 
@@ -49,5 +61,5 @@ extension PinListViewController: UITableViewDataSource {
         }
     }
     
-    
+
 }

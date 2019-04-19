@@ -20,25 +20,20 @@ class StudentLocation: NSObject, MKAnnotation {
     }
 }
 
-class MapViewController: UIViewController {
+class MapViewController: BaseViewController {
 
     @IBOutlet weak var mapView: MKMapView!
+    
     @IBAction func logoutTapped(_ sender: Any) {
-        UdacityClient.logout(completion: self.handleLogoutResponse)
+        handleLogout()
     }
     
-    func handleLogoutResponse(error: Error?) {
-        if error == nil {
-            self.dismiss(animated: true, completion: nil)
-        } else {
-            showLogoutFailure(message: error?.localizedDescription ?? "")
-        }
+    @IBAction func refreshTapped(_ sender: Any) {
+        handleRefresh()
     }
     
-    func showLogoutFailure(message: String) {
-        let alertVC = UIAlertController(title: "Logout Failed", message: message, preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        show(alertVC, sender: nil)
+    @IBAction func addTapped(_ sender: Any) {
+        handleAdd()
     }
     
     override func viewDidLoad() {
