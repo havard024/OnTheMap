@@ -43,7 +43,10 @@ extension PinListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let student = StudentModel.students[indexPath.row]
-        print("Student selected: \(student)")
+        let app = UIApplication.shared
+        if let toOpen = student.mediaURL {
+            app.openURL(URL(string: toOpen)!)
+        }
     }
     
     
