@@ -42,7 +42,7 @@ class InformationPostingViewController: UIViewController {
         if error != nil {
             showMessage(message: "Could not convert location to geolocation: \(locationTextField.text ?? "")")
         } else {
-            // TODO: Navigate to mapview and show geolocation
+            performSegue(withIdentifier: "showInformationPostingMap", sender: self)
         }
     }
     

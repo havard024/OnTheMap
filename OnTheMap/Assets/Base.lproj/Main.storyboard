@@ -63,7 +63,7 @@
                     <tabBarItem key="tabBarItem" title="" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="mapView" destination="mg8-Xx-jhB" id="C1I-h0-Zqn"/>
-                        <segue destination="4ae-65-hh1" kind="show" identifier="showInformationPosting" id="BVY-v4-D8T"/>
+                        <segue destination="aN1-lN-Ys5" kind="show" identifier="showInformationPosting" id="BVY-v4-D8T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -141,7 +141,7 @@
                     <tabBarItem key="tabBarItem" title="" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="tableView" destination="Ocg-jg-BlX" id="568-M5-g6H"/>
-                        <segue destination="4ae-65-hh1" kind="show" identifier="showInformationPosting" id="Ldr-l6-mCS"/>
+                        <segue destination="aN1-lN-Ys5" kind="show" identifier="showInformationPosting" id="Ldr-l6-mCS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -251,7 +251,7 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Information Posting View Controller-->
+        <!--Add Location-->
         <scene sceneID="WvK-7P-4mb">
             <objects>
                 <viewController id="4ae-65-hh1" customClass="InformationPostingViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
@@ -262,18 +262,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_world" translatesAutoresizingMaskIntoConstraints="NO" id="jFZ-Gt-HGr">
                                 <rect key="frame" x="181" y="142" width="52" height="67"/>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2of-J4-qPI">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="Add Location" id="G6X-pQ-ddO">
-                                        <barButtonItem key="leftBarButtonItem" title="CANCEL" id="HoU-xo-mI8">
-                                            <connections>
-                                                <action selector="cancelTapped:" destination="4ae-65-hh1" id="dqk-SF-Qud"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CdY-7k-RxP">
                                 <rect key="frame" x="64" y="241" width="286" height="151"/>
                                 <subviews>
@@ -308,25 +296,64 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="jFZ-Gt-HGr" firstAttribute="top" secondItem="2of-J4-qPI" secondAttribute="bottom" constant="54" id="0TP-JZ-m1d"/>
                             <constraint firstItem="9PU-Hi-kSc" firstAttribute="trailing" secondItem="CdY-7k-RxP" secondAttribute="trailing" constant="64" id="7Q8-Eu-7A8"/>
                             <constraint firstItem="CdY-7k-RxP" firstAttribute="top" secondItem="jFZ-Gt-HGr" secondAttribute="bottom" constant="32" id="Gct-Fi-Lyg"/>
                             <constraint firstItem="CdY-7k-RxP" firstAttribute="leading" secondItem="9PU-Hi-kSc" secondAttribute="leading" constant="64" id="Q8m-fC-Kga"/>
-                            <constraint firstItem="2of-J4-qPI" firstAttribute="trailing" secondItem="9PU-Hi-kSc" secondAttribute="trailing" id="U2p-Pu-F3g"/>
+                            <constraint firstItem="jFZ-Gt-HGr" firstAttribute="top" secondItem="9PU-Hi-kSc" secondAttribute="top" constant="54" id="QlC-he-0Hb"/>
                             <constraint firstItem="jFZ-Gt-HGr" firstAttribute="centerX" secondItem="9PU-Hi-kSc" secondAttribute="centerX" id="gZF-rr-uhc"/>
-                            <constraint firstItem="2of-J4-qPI" firstAttribute="leading" secondItem="9PU-Hi-kSc" secondAttribute="leading" id="jdx-6W-KLi"/>
-                            <constraint firstItem="2of-J4-qPI" firstAttribute="top" secondItem="9PU-Hi-kSc" secondAttribute="top" id="o5q-yl-QGi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9PU-Hi-kSc"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add Location" id="paw-2c-P7Y">
+                        <barButtonItem key="leftBarButtonItem" title="CANCEL" id="HoU-xo-mI8">
+                            <connections>
+                                <action selector="cancelTapped:" destination="4ae-65-hh1" id="dqk-SF-Qud"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="linkTextField" destination="CZ1-s6-GN3" id="OK5-Wz-llS"/>
                         <outlet property="locationTextField" destination="IjQ-2I-bPV" id="DJm-sw-eIy"/>
+                        <segue destination="GYt-zv-5V6" kind="show" identifier="showInformationPostingMap" id="byR-tV-JeC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHN-TN-c8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2873.913043478261" y="-71.651785714285708"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eGw-e4-vmZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aN1-lN-Ys5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RNf-gv-e54">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4ae-65-hh1" kind="relationship" relationship="rootViewController" id="p5v-dW-3M8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tx3-i4-prm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="1963.7681159420292" y="-71.651785714285708"/>
+        </scene>
+        <!--Add Location-->
+        <scene sceneID="6Sb-Fx-VsL">
+            <objects>
+                <viewController id="GYt-zv-5V6" customClass="InformationPostingMapViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NcM-Nb-T4b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="3QA-Ud-0sF"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Location" id="Hkf-aS-M20"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ebY-UD-Qyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3822" y="-72"/>
         </scene>
     </scenes>
     <resources>

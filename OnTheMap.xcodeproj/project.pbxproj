@@ -10,6 +10,7 @@
 		043046E0226A7B5F003708D3 /* UIViewController+AlertHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043046DF226A7B5F003708D3 /* UIViewController+AlertHelpers.swift */; };
 		043046E2226A7C90003708D3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043046E1226A7C90003708D3 /* BaseViewController.swift */; };
 		043046E4226A7F3D003708D3 /* InformationPostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043046E3226A7F3D003708D3 /* InformationPostingViewController.swift */; };
+		043046E6226A8873003708D3 /* InformationPostingMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043046E5226A8873003708D3 /* InformationPostingMapViewController.swift */; };
 		04434CCA2258CD9400B1A48A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04434CC92258CD9400B1A48A /* AppDelegate.swift */; };
 		04434CCC2258CD9400B1A48A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04434CCB2258CD9400B1A48A /* MapViewController.swift */; };
 		04434CCE2258CD9400B1A48A /* PinListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04434CCD2258CD9400B1A48A /* PinListViewController.swift */; };
@@ -35,6 +36,7 @@
 		043046DF226A7B5F003708D3 /* UIViewController+AlertHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AlertHelpers.swift"; sourceTree = "<group>"; };
 		043046E1226A7C90003708D3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		043046E3226A7F3D003708D3 /* InformationPostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationPostingViewController.swift; sourceTree = "<group>"; };
+		043046E5226A8873003708D3 /* InformationPostingMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationPostingMapViewController.swift; sourceTree = "<group>"; };
 		04434CC62258CD9400B1A48A /* OnTheMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04434CC92258CD9400B1A48A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04434CCB2258CD9400B1A48A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				04434CEC2258DF1700B1A48A /* LoginViewController.swift */,
 				043046E1226A7C90003708D3 /* BaseViewController.swift */,
 				043046E3226A7F3D003708D3 /* InformationPostingViewController.swift */,
+				043046E5226A8873003708D3 /* InformationPostingMapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				04434CCE2258CD9400B1A48A /* PinListViewController.swift in Sources */,
 				04434CE62258D2F400B1A48A /* LoginButton.swift in Sources */,
 				04434CEF2258E01C00B1A48A /* UdacityClient.swift in Sources */,
+				043046E6226A8873003708D3 /* InformationPostingMapViewController.swift in Sources */,
 				043046E4226A7F3D003708D3 /* InformationPostingViewController.swift in Sources */,
 				04434D0B2259056200B1A48A /* Student.swift in Sources */,
 				04434D092259054A00B1A48A /* StudentLocationResponse.swift in Sources */,
