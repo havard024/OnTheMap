@@ -63,6 +63,7 @@
                     <tabBarItem key="tabBarItem" title="" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="mapView" destination="mg8-Xx-jhB" id="C1I-h0-Zqn"/>
+                        <segue destination="4ae-65-hh1" kind="show" identifier="showInformationPosting" id="BVY-v4-D8T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -140,6 +141,7 @@
                     <tabBarItem key="tabBarItem" title="" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="tableView" destination="Ocg-jg-BlX" id="568-M5-g6H"/>
+                        <segue destination="4ae-65-hh1" kind="show" identifier="showInformationPosting" id="Ldr-l6-mCS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -249,6 +251,21 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
+        <!--Information Posting View Controller-->
+        <scene sceneID="WvK-7P-4mb">
+            <objects>
+                <viewController id="4ae-65-hh1" customClass="InformationPostingViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vNC-jg-pHA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="9PU-Hi-kSc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zHN-TN-c8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1965" y="-71"/>
+        </scene>
     </scenes>
     <resources>
         <image name="icon_addpin" width="24" height="24"/>
@@ -259,5 +276,8 @@
         <image name="icon_refresh" width="24" height="24"/>
         <image name="logo-u" width="62" height="62"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ldr-l6-mCS"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" name="primary"/>
 </document>

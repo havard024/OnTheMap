@@ -41,7 +41,7 @@ class BaseViewController: UIViewController {
     }
     
     func handleAdd() {
-        
+        performSegue(withIdentifier: "showInformationPosting", sender: self)
     }
     
     
