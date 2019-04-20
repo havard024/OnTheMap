@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OnTheMap/Controller/InformationPostingMapViewController.swift"
+            timestampString = "577412570.556783"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "finishTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OnTheMap/Model/BaseClient.swift"
+            timestampString = "577412570.5568531"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "taskForMethodRequest(request:responseType:headers:dataTransformer:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static OnTheMap.BaseClient.(taskForMethodRequest in _D65350CAC129FD41C3430D2F140C2C4A)&lt;A where A1: Swift.Decodable&gt;(request: Foundation.URLRequest, responseType: A1.Type, headers: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, dataTransformer: Swift.Optional&lt;(Foundation.Data) -&gt; Foundation.Data&gt;, completion: (Swift.Optional&lt;A1&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; __C.NSURLSessionTask"
+                  moduleName = "OnTheMap"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/github/xcode/OnTheMap/OnTheMap/Model/BaseClient.swift"
+                  timestampString = "577411890.628293"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "899">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static OnTheMap.BaseClient.(taskForMethodRequest in _D65350CAC129FD41C3430D2F140C2C4A)&lt;A where A1: Swift.Decodable&gt;(request: Foundation.URLRequest, responseType: A1.Type, headers: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, dataTransformer: Swift.Optional&lt;(Foundation.Data) -&gt; Foundation.Data&gt;, completion: (Swift.Optional&lt;A1&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; __C.NSURLSessionTask"
+                  moduleName = "OnTheMap"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/github/xcode/OnTheMap/OnTheMap/Model/BaseClient.swift"
+                  timestampString = "577411890.630888"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "622">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

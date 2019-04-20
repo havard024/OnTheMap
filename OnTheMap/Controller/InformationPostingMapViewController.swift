@@ -33,7 +33,26 @@ class InformationPostingMapViewController: UIViewController {
         mapView.selectAnnotation(annotation, animated: true)
     }
     
-
+    @IBAction func finishTapped(_ sender: Any) {
+        let uuid = UUID().uuidString
+        
+        // TODO: Refactor so that we don't need to set default values inside constructor
+        let student = PostStudent(latitude: informationPost?.coordinate.latitude ?? 0.0, longitude: informationPost?.coordinate.longitude ?? 0.0, mediaURL: informationPost?.link ?? "")
+        print(student)
+        
+        // TODO: If logged in user already has a pin, update that pin instead
+        ParseClient.postStudentLocation(student: student, completion: handlePostStudentResponse)
+    }
+    
+    private func handlePostStudentResponse(student: PostStudentResponse?, error: Error?) {
+        guard let student = student else {
+            showMessage(message: "Could not create new student: \(error?.localizedDescription)")
+            return
+        }
+        
+        // TODO: Navigate back to map view
+    }
+    
     /*
     // MARK: - Navigation
 

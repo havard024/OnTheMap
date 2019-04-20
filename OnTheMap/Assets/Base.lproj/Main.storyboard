@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -350,6 +351,19 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7f5-cr-G5X">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmV-ur-1fk">
+                                <rect key="frame" x="20" y="797" width="374" height="45"/>
+                                <color key="backgroundColor" name="primary"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Pn7-IC-rTa"/>
+                                </constraints>
+                                <state key="normal" title="FINISH">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="finishTapped:" destination="GYt-zv-5V6" eventType="touchUpInside" id="4Mx-Dl-uvn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -357,6 +371,9 @@
                             <constraint firstItem="7f5-cr-G5X" firstAttribute="top" secondItem="3QA-Ud-0sF" secondAttribute="top" id="5Qy-Pq-A5v"/>
                             <constraint firstItem="7f5-cr-G5X" firstAttribute="trailing" secondItem="3QA-Ud-0sF" secondAttribute="trailing" id="ClZ-CG-UHd"/>
                             <constraint firstItem="7f5-cr-G5X" firstAttribute="leading" secondItem="3QA-Ud-0sF" secondAttribute="leading" id="TUf-AA-yhB"/>
+                            <constraint firstItem="3QA-Ud-0sF" firstAttribute="trailing" secondItem="mmV-ur-1fk" secondAttribute="trailing" constant="20" id="UOU-eD-feo"/>
+                            <constraint firstItem="mmV-ur-1fk" firstAttribute="leading" secondItem="3QA-Ud-0sF" secondAttribute="leading" constant="20" id="Uxi-QA-gBT"/>
+                            <constraint firstItem="3QA-Ud-0sF" firstAttribute="bottom" secondItem="mmV-ur-1fk" secondAttribute="bottom" constant="20" id="bxa-K3-Cro"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3QA-Ud-0sF"/>
                     </view>
@@ -379,6 +396,9 @@
         <image name="icon_refresh" width="24" height="24"/>
         <image name="icon_world" width="52" height="67"/>
         <image name="logo-u" width="62" height="62"/>
+        <namedColor name="primary">
+            <color red="0.0" green="0.60000002384185791" blue="0.80000001192092896" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="BVY-v4-D8T"/>

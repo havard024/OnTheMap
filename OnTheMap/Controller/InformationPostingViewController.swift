@@ -36,7 +36,7 @@ class InformationPostingViewController: UIViewController {
         super.viewDidLoad()
 
         locationTextField.text = "Oslo"
-        linkTextField.text = "google.com"
+        linkTextField.text = "https://google.com"
         // Do any additional setup after loading the view.
     }
     

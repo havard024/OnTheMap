@@ -18,13 +18,15 @@ class ParseClient: BaseClient<ParseResponse> {
     }
     
     enum Endpoints {
-        static let base = "https://parse.udacity.com/parse/classes"
+        static let base = "https://parse.udacity.com/parse/classes/StudentLocation"
         
         case getStudentLocations(Int)
+        case createStudentLocation
         
         var stringValue: String {
             switch self {
-            case .getStudentLocations(let limit): return Endpoints.base + "/StudentLocation?limit=\(limit)&order=-updatedAt"
+            case .getStudentLocations(let limit): return Endpoints.base + "?limit=\(limit)&order=-updatedAt"
+            case .createStudentLocation: return Endpoints.base
             }
         }
         
@@ -37,13 +39,23 @@ class ParseClient: BaseClient<ParseResponse> {
         let url = Endpoints.getStudentLocations(limit).url
         
         taskForGETRequest(url: url, responseType: StudentLocationResponse.self, headers: headers) { (response, error) in
-            print("taskForGETRequest response: \(response) error: \(error)")
+            // Could not find a way to filter out empty values with the parse API, so we filter out after getting the response which means the returned values might be < 100
             if let response = response {
                 completion(response.results.filter({ $0.isValid }), error)
             } else {
                 completion([], error)
             }
         }
-
+    }
+    
+    class func postStudentLocation(student: PostStudent, completion: @escaping (PostStudentResponse?, Error?) -> Void) {
+        let url = Endpoints.createStudentLocation.url
+        taskForPOSTRequest(url: url, responseType: PostStudentResponse.self, body: student, headers: headers) { (student, error) in
+            if let student = student {
+                completion(student, error)
+            } else {
+                completion(nil, error)
+            }
+        }
     }
 }

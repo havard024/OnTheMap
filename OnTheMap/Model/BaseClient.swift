@@ -21,7 +21,7 @@ class BaseClient<ClientResponse> where ClientResponse: Decodable, ClientResponse
         return taskForMethodRequest(request: request, responseType: responseType, headers: headers!, completion: completion)
     }
     
-    class func taskForPOSTRequest<RequestType: Encodable, ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, body: RequestType, headers: [String:String]? = [:], dataTransformer: dataTransformerHandler?, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {
+    class func taskForPOSTRequest<RequestType: Encodable, ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, body: RequestType, headers: [String:String]? = [:], dataTransformer: dataTransformerHandler? = defaultDataTransformer, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Accept")

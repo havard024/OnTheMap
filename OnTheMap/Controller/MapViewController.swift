@@ -30,6 +30,7 @@ class MapViewController: BaseViewController {
     
     @IBAction func refreshTapped(_ sender: Any) {
         handleRefresh()
+        setAnnotations()
     }
     
     @IBAction func addTapped(_ sender: Any) {
@@ -41,29 +42,32 @@ class MapViewController: BaseViewController {
         // Do any additional setup after loading the view.
         
         mapView.delegate = self
-        
+        setAnnotations()
+    }
+    
+    private func setAnnotations() {
         var annotations = [MKPointAnnotation]()
-        
+    
         StudentModel.students.forEach { student in
-            // Students with empty values are filtered before stored inside the StudentModel, so we are sure that the students here will have values in the fields we access
-            let latitude = student.latitude!
-            let longitude = student.longitude!
-            let firstName = student.firstName!
-            let lastName = student.lastName!
-            let mediaURL = student.mediaURL!
-            let name = "\(firstName) \(lastName)"
-            
-            let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = coordinate
-            annotation.title = name
-            annotation.subtitle = mediaURL
-            
-            print("name: \(name) mediaURL: \(mediaURL)")
-            annotations.append(annotation)
+        // Students with empty values are filtered before stored inside the StudentModel, so we are sure that the students here will have values in the fields we access
+        let latitude = student.latitude!
+        let longitude = student.longitude!
+        let firstName = student.firstName!
+        let lastName = student.lastName!
+        let mediaURL = student.mediaURL!
+        let name = "\(firstName) \(lastName)"
+    
+        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = coordinate
+        annotation.title = name
+        annotation.subtitle = mediaURL
+    
+        print("name: \(name) mediaURL: \(mediaURL)")
+        annotations.append(annotation)
         }
-        
+    
         mapView.addAnnotations(annotations)
     }
 }

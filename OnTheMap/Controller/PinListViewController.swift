@@ -21,6 +21,7 @@ class PinListViewController: BaseViewController {
     
     @IBAction func refreshTapped(_ sender: Any) {
         handleRefresh()
+        tableView.reloadData()
     }
     
     @IBAction func logoutTapped(_ sender: Any) {
