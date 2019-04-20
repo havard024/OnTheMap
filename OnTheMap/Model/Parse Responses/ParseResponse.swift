@@ -9,11 +9,11 @@
 import Foundation
 
 struct ParseResponse: Codable {
-    
+    let error: String
 }
 
 extension ParseResponse: LocalizedError {
     var errorDescription: String? {
-        return "Not Implemented"
+        return error
     }
 }
