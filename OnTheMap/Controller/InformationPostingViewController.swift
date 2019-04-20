@@ -56,13 +56,23 @@ class InformationPostingViewController: UIViewController {
         getCoordinate(addressString: location, completionHandler: handleCoordinateResponse)
     }
     
-    private func handleCoordinateResponse(geolocation: CLLocationCoordinate2D, error: NSError?) {
-        if error != nil {
-            showMessage(message: "Could not convert location to geolocation: \(locationTextField.text ?? "")")
-        } else {
+    private func handleCoordinateResponse(geolocation: CLLocationCoordinate2D) {
+        if CLLocationCoordinate2DIsValid(geolocation) {
             // Store geolocation so we can use it in prepare function
             coordinate = geolocation
             performSegue(withIdentifier: "showInformationPostingMap", sender: self)
+        } else {
+            // Not sure why but changing the show(...) to present(...) for the alert solved the problem where the alert is displayed awkwardly in the top left corner
+            // It seems to be related to that we're presenting an AlertViewController on top of a modal
+            // Ref: https://stackoverflow.com/a/54408645
+            let alertVC = UIAlertController(title: "Info", message: "Could not convert location to geolocation: \(locationTextField.text ?? "")", preferredStyle: .alert)
+            alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            alertVC.modalPresentationStyle = .overFullScreen
+
+            present(alertVC, animated: true, completion: nil)
+            
+            // Using the below method shows the alert message in top left corner
+            // showMessage(message: "Could not convert location to geolocation: \(locationTextField.text ?? "")")
         }
     }
     
@@ -85,7 +95,7 @@ class InformationPostingViewController: UIViewController {
     }
     
     private func getCoordinate( addressString : String,
-                        completionHandler: @escaping(CLLocationCoordinate2D, NSError?) -> Void ) {
+                        completionHandler: @escaping(CLLocationCoordinate2D) -> Void ) {
         Spinner.start()
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(addressString) { (placemarks, error) in
@@ -95,7 +105,7 @@ class InformationPostingViewController: UIViewController {
                     
                     DispatchQueue.main.async {
                         Spinner.stop()
-                        completionHandler(location.coordinate, nil)
+                        completionHandler(location.coordinate)
                     }
                     
                     return
@@ -104,7 +114,7 @@ class InformationPostingViewController: UIViewController {
             
             DispatchQueue.main.async {
                 Spinner.stop()
-                completionHandler(kCLLocationCoordinate2DInvalid, error as NSError?)
+                completionHandler(kCLLocationCoordinate2DInvalid)
             }
         }
     }
