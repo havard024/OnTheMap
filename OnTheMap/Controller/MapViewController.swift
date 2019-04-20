@@ -37,6 +37,10 @@ class MapViewController: BaseViewController {
         handleAdd()
     }
     
+    @IBAction func uwindToMapViewController(segue: UIStoryboardSegue) {
+        refreshTapped(segue.source)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

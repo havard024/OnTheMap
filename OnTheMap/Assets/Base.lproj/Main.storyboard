@@ -380,9 +380,11 @@
                     <navigationItem key="navigationItem" title="Add Location" id="Hkf-aS-M20"/>
                     <connections>
                         <outlet property="mapView" destination="7f5-cr-G5X" id="qDt-zi-zkf"/>
+                        <segue destination="ZjH-lL-Uu6" kind="unwind" identifier="unwind" unwindAction="uwindToMapViewControllerWithSegue:" id="4gC-ZI-0nW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebY-UD-Qyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ZjH-lL-Uu6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3821.739130434783" y="-72.321428571428569"/>
         </scene>

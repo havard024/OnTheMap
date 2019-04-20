@@ -50,7 +50,7 @@ class InformationPostingMapViewController: UIViewController {
             return
         }
         
-        // TODO: Navigate back to map view
+        performSegue(withIdentifier: "unwind", sender: self)
     }
     
     /*
