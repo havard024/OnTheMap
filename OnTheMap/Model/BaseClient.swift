@@ -57,14 +57,19 @@ class BaseClient<ClientResponse> where ClientResponse: Decodable, ClientResponse
     }
     
     private class func taskForMethodRequest<ResponseType: Decodable>(request: URLRequest, responseType: ResponseType.Type, headers: [String:String] = [:], dataTransformer: dataTransformerHandler? = defaultDataTransformer, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {
-        Spinner.start()
+        DispatchQueue.main.async {
+            Spinner.start()
+        }
         var request = request
         headers.keys.forEach { request.addValue(headers[$0]!, forHTTPHeaderField: $0 )}
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             // TODO: needs major refactor / clean up
             if let error = error {
-                completion(nil, APIError.requestError(error))
+                DispatchQueue.main.async {
+                    Spinner.stop()
+                    completion(nil, APIError.requestError(error))
+                }
             } else if let response = response {
                 if let httpResponse = response as? HTTPURLResponse {
                     if httpResponse.statusCode < 200 || httpResponse.statusCode > 299 {
